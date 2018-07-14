@@ -1,0 +1,25 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+Search iPhone 7 in Hotline
+    Open Browser To Hotline
+    Search For iPhone 7
+
+*** Keywords ***
+Open Browser To Hotline
+    Open Browser    https://www.hotline.ua    browser=chrome
+    Maximize Browser Window
+    Hotline Should Be Open
+
+Search For Iphone7
+    Input Text    id=searchbox    iPhone 7 
+    Press Key    id=doSearch    \\13
+    Wait Until Element Is visible   xpath=//*[@id="page-search"]/div[2]/div/div[1]/div[3]/div/ul/li[1]/div[3]/div/p/a 
+    Click Element    xpath=//*[@id="page-search"]/div[2]/div/div[1]/div[3]/div/ul/li[1]/div[3]/div/p/a   
+
+
+
+Hotline Should Be Open
+    Location Should Contain    https://hotline.ua/	
+	
