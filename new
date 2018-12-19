@@ -9,10 +9,10 @@ browser.maximize_window()
 browser.get("https://embed.qa.megogo.net/ev3/registration?id=20514")
 
 #Input login
-WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.ID, "Registration")))
-login = browser.find_element_by_xpath('//*[@id="email"]')
-login.send_keys("maksim@ukr.net") #Enter login
+WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="Registration"]/div[1]/div/div[1]/div/input')))
+login = browser.find_element_by_xpath('//*[@id="Registration"]/div[1]/div/div[1]/div/input')
+login.send_keys("maksym.filatenko@x2sy.com") #Enter login
 
 #Input password
-password = browser.find_element_by_xpath('//*[@id="regiterPassword"]')
+password = browser.find_element_by_xpath('//*[@id="Registration"]/div[1]/div/div[1]/div/input')
 password.send_keys('maksim') #Enter password
